@@ -24,4 +24,9 @@ public interface EmployeeMapper extends BaseMapper<Employee> {
      * @return
      */
     Page<Employee> pageQuery(EmployeePageQueryDTO employeePageQueryDTO);
+
+    void update(Employee employee);
+
+
+    Employee getById(Long id);
 }
