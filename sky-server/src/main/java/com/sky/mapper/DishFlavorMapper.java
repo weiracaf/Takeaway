@@ -27,7 +27,7 @@ public interface DishFlavorMapper {
 
     /**
      * 根据菜品id查询对应口味
-     * @param id
+     * @param dishId
      * @return
      */
     @Select("select * from dish_flavor where dish_id = #{dishId}")

@@ -154,7 +154,7 @@ public class DishServiceImpl implements DishService {
 
         List<DishFlavor> flavors = dishDTO.getFlavors();
         if(flavors != null && flavors.size() > 0) {
-            //这里我有点蒙，id按说修改是不用改的，但老师还是说可能是新增，那就这样写吧
+            //这里要新增id，为什么？，因为dishId不会被赋值的
             for (DishFlavor flavor:flavors
             ) {
                 flavor.setDishId(dishDTO.getId());
@@ -164,5 +164,33 @@ public class DishServiceImpl implements DishService {
 
         }
 
+    }
+
+    /**
+     * 更改起售停售
+     * @param status
+     * @param id
+     */
+    @Override
+    public void startOrStop(Integer status, Long id) {
+        Dish dish = Dish.builder()
+                .status(status)
+                .id(id)
+                .build();
+        dishMapper.update(dish);
+
+    }
+
+    /**
+     * 根据分类id查询菜品
+     * @param categoryId
+     * @return
+     */
+    public List<Dish> list(Long categoryId) {
+        Dish dish = Dish.builder()
+                .categoryId(categoryId)
+                .status(StatusConstant.ENABLE)
+                .build();
+        return dishMapper.list(dish);
     }
 }
