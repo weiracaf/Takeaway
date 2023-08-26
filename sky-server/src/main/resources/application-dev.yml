@@ -11,3 +11,8 @@ sky:
     bucket-name: yuan-cqwm
     access-key-id: LTAI5tFvxhvS51TgUZEVMpUq
     access-key-secret: aLx85ZXTYBvuXLKksIVZUnPijFbH8W
+  redis:
+    host: localhost
+    port: 6379
+    password: 123456
+    database: 10 # redis默认创建16个数据库从DB0-DB15你想用那个直接写对应数值
