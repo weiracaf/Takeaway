@@ -1,8 +1,6 @@
 package com.sky.mapper;
 
-import com.sky.annotation.AutoFill;
 import com.sky.entity.SetmealDish;
-import com.sky.enumeration.OperationType;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
@@ -24,7 +22,7 @@ public interface SetmealDishMapper {
      * 新增套餐菜品关系
      * @param setmealDishes
      */
-    @AutoFill(OperationType.INSERT)
+    //这里因为setmealdish没有创建时间这个字段所以不用写AutoFill
     void isnertBatch(List<SetmealDish> setmealDishes);
 
     @Select("select * from setmeal_dish where setmeal_id = #{setmealId}")
