@@ -5,6 +5,7 @@ import com.sky.dto.OrdersPageQueryDTO;
 import com.sky.entity.Orders;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 
 @Mapper
 public interface OrderMapper {
@@ -30,4 +31,18 @@ public interface OrderMapper {
      * @param ordersPageQueryDTO
      */
     Page<Orders> pageQuery(OrdersPageQueryDTO ordersPageQueryDTO);
+
+    /**
+     * 根据id查询订单
+     * @return
+     */
+    @Select("select * from orders where id = #{id}")
+    Orders getById(Long id);
+
+    /**
+     * 根据id取消订单
+     * @param id
+     */
+
+    void cancelById(Long id);
 }

@@ -5,6 +5,7 @@ import com.sky.dto.OrdersSubmitDTO;
 import com.sky.result.PageResult;
 import com.sky.vo.OrderPaymentVO;
 import com.sky.vo.OrderSubmitVO;
+import com.sky.vo.OrderVO;
 
 public interface OrderService {
     OrderSubmitVO submitOrder(OrdersSubmitDTO ordersSubmitDTO);
@@ -24,5 +25,26 @@ public interface OrderService {
      */
     PageResult pageQuery4User(int page, int pageSize, Integer status);
 
+    /**
+     * 订单支付成功
+     * @param outTradeNo
+     */
     void paySuccess(String outTradeNo);
+
+    /**
+     * 查询订单详情
+     * @return
+     */
+    OrderVO details(Long id);
+
+    /**
+     * 取消订单
+     */
+    void userCancelById (Long id) throws Exception;
+    /**
+     * 再来一单
+     *
+     * @param id
+     */
+    void repetition(Long id);
 }
