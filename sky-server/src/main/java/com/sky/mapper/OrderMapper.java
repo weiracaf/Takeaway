@@ -5,7 +5,9 @@ import com.sky.dto.OrdersPageQueryDTO;
 import com.sky.entity.Orders;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.Update;
+
+import java.time.LocalDateTime;
+import java.util.List;
 
 @Mapper
 public interface OrderMapper {
@@ -40,9 +42,9 @@ public interface OrderMapper {
     Orders getById(Long id);
 
     /**
-     * 根据id取消订单
-     * @param id
+     *根据订单状态和订单时间查询订单
+     * @return
      */
-
-    void cancelById(Long id);
+    @Select("select * from orders where status=#{status} and order_time < #{orderTime} ")
+    List<Orders> getByStatusAndOrderTimeLT(Integer status, LocalDateTime orderTime);
 }
