@@ -45,12 +45,6 @@
                 <artifactId>mybatis-spring-boot-starter</artifactId>
                 <version>${mybatis.spring}</version>
             </dependency>
-            <!--myBatisPlus依赖        -->
-            <dependency>
-                <groupId>com.baomidou</groupId>
-                <artifactId>mybatis-plus-boot-starter</artifactId>
-                <version>${mybatisplus}</version>
-            </dependency>
 
             <dependency>
                 <groupId>org.projectlombok</groupId>

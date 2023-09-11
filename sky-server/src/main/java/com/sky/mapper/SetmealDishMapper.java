@@ -23,7 +23,7 @@ public interface SetmealDishMapper {
      * @param setmealDishes
      */
     //这里因为setmealdish没有创建时间这个字段所以不用写AutoFill
-    void isnertBatch(List<SetmealDish> setmealDishes);
+    void insertBatch(List<SetmealDish> setmealDishes);
 
     @Select("select * from setmeal_dish where setmeal_id = #{setmealId}")
     List<SetmealDish> getBySetmealId(Long setmealId);

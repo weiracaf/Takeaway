@@ -50,7 +50,7 @@ public class SetmealServiceImpl implements SetmealService {
         for (SetmealDish setmealDish : setmealDishes) {
             setmealDish.setSetmealId(id);
         }
-        setmealDishMapper.isnertBatch(setmealDishes);
+        setmealDishMapper.insertBatch(setmealDishes);
 
     }
 
@@ -120,7 +120,7 @@ public class SetmealServiceImpl implements SetmealService {
 
         setmealDishMapper.getBySetmealId(setmealDTO.getId());
 
-        setmealDishMapper.isnertBatch(setmealDishes);
+        setmealDishMapper.insertBatch(setmealDishes);
 
     }
 
