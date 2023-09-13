@@ -3,8 +3,10 @@ package com.sky.service;
 import com.sky.vo.OrderReportVO;
 import com.sky.vo.SalesTop10ReportVO;
 import com.sky.vo.TurnoverReportVO;
+import com.sky.vo.UserReportVO;
 import org.springframework.format.annotation.DateTimeFormat;
 
+import javax.servlet.http.HttpServletResponse;
 import java.time.LocalDate;
 
 public interface ReportService {
@@ -32,4 +34,18 @@ public interface ReportService {
      */
     SalesTop10ReportVO getSalesTop10(@DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate begin,
                                      @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate end);
+
+    /**
+     * 导出运营数据报表
+     * @param reponse
+     */
+    void exportBusinessData(HttpServletResponse reponse);
+
+    /**
+     * 统计指定时间区间内的用户数据
+     * @param begin
+     * @param end
+     * @return
+     */
+    UserReportVO getUserStatistics(LocalDate begin, LocalDate end);
 }
