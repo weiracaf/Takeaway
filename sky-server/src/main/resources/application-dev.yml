@@ -9,8 +9,7 @@ sky:
   alioss:
     endpoint: oss-cn-beijing.aliyuncs.com
     bucket-name: yuan-cqwm
-    access-key-id: LTAI5tFvxhvS51TgUZEVMpUq
-    access-key-secret: aLx85ZXTYBvuXLKksIVZUnPijFbH8W
+
   redis:
     host: localhost
     port: 6379
